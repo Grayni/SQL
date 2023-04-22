@@ -171,6 +171,7 @@ DROP TABLE IF EXISTS `users_music`;
 CREATE TABLE `users_music` (
 	user_id BIGINT UNSIGNED NOT NULL,
 	music_id BIGINT UNSIGNED NOT NULL,
+	PRIMARY KEY (user_id, music_id),
 	FOREIGN KEY (user_id) REFERENCES users(id),
 	FOREIGN KEY (music_id) REFERENCES music(id)
 );
