@@ -33,14 +33,14 @@ WHERE FLOOR(DATEDIFF(CURDATE(), p.birthday) / 365.25) < 12;
 -- 3
 -- count of women
 SELECT 'women' AS gender, COUNT(*) AS count FROM likes lw
-JOIN profiles pw ON pw.user_id = lw.user_id
+LEFT JOIN profiles pw ON pw.user_id = lw.user_id
 WHERE pw.gender = 'f'
 
 UNION ALL -- combine requests without filter 'unique'
 
 -- count of men
 SELECT 'men' AS gender, COUNT(*) AS count FROM likes lm
-JOIN profiles pm ON pm.user_id = lm.user_id
+LEFT JOIN profiles pm ON pm.user_id = lm.user_id
 WHERE pm.gender = 'm'
 -- add if output result
 ORDER BY count DESC
