@@ -54,7 +54,7 @@ BEGIN
         RETURN 'Доброе утро';
     ELSEIF current_time_val >= TIME('12:00:00') AND current_time_val < TIME('18:00:00') THEN
         RETURN 'Добрый день';
-    ELSEIF current_time_val >= TIME('18:00:00') AND current_time_val < TIME('00:00:00') THEN
+    ELSEIF current_time_val >= TIME('18:00:00') AND current_time_val < TIME('24:00:00') THEN
         RETURN 'Добрый вечер';
     ELSE
         RETURN 'Доброй ночи';
