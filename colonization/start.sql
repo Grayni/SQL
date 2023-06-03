@@ -1,7 +1,6 @@
 /* Run all scripts */
 
 -- table initialization
-SOURCE tables.sql;
-
+@include tables.sql
 -- add data in database
-SOURCE data.sql;
+@include data.sql

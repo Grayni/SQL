@@ -76,7 +76,7 @@ CREATE TABLE `astronauts` (
   birthday DATE,
   nationality VARCHAR(100),
   colony_id INT UNSIGNED NOT NULL,
-  skils TEXT
+  skills TEXT
 );
 
 
@@ -93,7 +93,7 @@ CREATE TABLE `colonies` (
   location VARCHAR(100) COMMENT 'coordinates',
   established_date DATE,
   population INT,
-  leader_id INT UNSIGNED NOT NULL,
+  leader_id INT UNSIGNED NULL,
   FOREIGN KEY (leader_id) REFERENCES astronauts(id)
 );
 
@@ -150,7 +150,7 @@ CREATE TABLE `equipment` (
   id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
   name VARCHAR(100),
   purpose TEXT,
-  category ENUM(''),
+  category ENUM('Research Equipment', 'Life Support Equipment', 'Mobile Equipment', 'Communication Equipment', 'Protective Equipment', 'Power Generation Equipment', 'Medical Equipment', 'Support Equipment'),
   quantity INT
 );
 
@@ -168,12 +168,12 @@ CREATE TABLE crew_members (
   mission_id INT UNSIGNED NOT NULL,
   mission_role_id INT UNSIGNED NOT NULL,
   access_rank TINYINT CHECK (access_rank >= 1 AND access_rank <= 5),
-  arrived_ship_id INT UNSIGNED NOT NULL,
+  type_ship_id INT UNSIGNED NOT NULL,
   responsibilities TEXT,
   FOREIGN KEY (astronaut_id) REFERENCES astronauts(id),
   FOREIGN KEY (mission_id) REFERENCES missions(id),
   FOREIGN KEY (mission_role_id) REFERENCES mission_roles(id),
-  FOREIGN KEY (arrived_ship_id) REFERENCES equipment(id)
+  FOREIGN KEY (type_ship_id) REFERENCES equipment(id)
 );
 
 
@@ -232,7 +232,7 @@ CREATE TABLE `addresses` (
     sector VARCHAR(100) NOT NULL,
     street VARCHAR(100) NOT NULL,
     building_number VARCHAR(10) NOT NULL,
-    building_type_id INT UNSIGNED NOT NULL,
+    building_type_id INT UNSIGNED NULL,
     FOREIGN KEY (colony_id) REFERENCES colonies(id)
 );
 
@@ -317,9 +317,7 @@ CREATE TABLE `life_support_systems` (
   description TEXT,
   capacity FLOAT,
   status ENUM('Operational', 'Under Maintenance', 'Out of Service') NOT NULL,
-  last_maintenance_date DATE,
-  building_id INT UNSIGNED NOT NULL,
-  FOREIGN KEY (building_id) REFERENCES buildings(id)
+  last_maintenance_date DATE
 );
 
 
@@ -337,5 +335,10 @@ CREATE TABLE `life_support_system_building_relations` (
   FOREIGN KEY (life_support_system_id) REFERENCES life_support_systems(id),
   FOREIGN KEY (building_id) REFERENCES buildings(id)
 );
+
+
+
+
+
 
 
