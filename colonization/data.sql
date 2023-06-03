@@ -217,7 +217,9 @@ VALUES
 
 
 -- equipment
-INSERT INTO `equipment` (name, purpose, category, quantity) VALUES
+INSERT INTO `equipment` (name, purpose, category, quantity)
+
+VALUES
     ('Research Lab', 'Conducting scientific experiments and research', 'Research Equipment', 5),
     ('Life Support System', 'Providing breathable air, water, and food for astronauts', 'Life Support Equipment', 10),
     ('Starship', 'Interplanetary spacecraft for crew and cargo transport', 'Mobile Equipment', 30),
@@ -599,7 +601,9 @@ VALUES
  
  
  -- equipment_resources
-INSERT INTO `equipment_resources` (equipment_id, resource_id) VALUES
+INSERT INTO `equipment_resources` (equipment_id, resource_id)
+
+VALUES
     (1, 1),  -- Research Lab requires Resource 1
     (1, 2),  -- Research Lab requires Resource 2
     (2, 3),  -- Life Support System requires Resource 3
@@ -741,7 +745,9 @@ INSERT INTO `equipment_resources` (equipment_id, resource_id) VALUES
 
     
 -- addresses 1.0
-INSERT INTO `addresses` (colony_id, sector, street, building_number) VALUES
+INSERT INTO `addresses` (colony_id, sector, street, building_number)
+
+VALUES
     (1, 'Sector A', 'Main Street', '1'), -- Deimos, Sector A, Main Street, Building 1
     (1, 'Sector B', 'Park Avenue', '10'), -- Deimos, Sector B, Park Avenue, Building 10
     (1, 'Sector C', 'Sunset Boulevard', '25'), -- Deimos, Sector C, Sunset Boulevard, Building 25
@@ -790,6 +796,7 @@ INSERT INTO `addresses` (colony_id, sector, street, building_number) VALUES
 
 -- buildings
 INSERT INTO buildings (name, address_id, building_count, facility_manager_id, functions, energy_efficiency, state, date_construction, number_of_employees, peculiarities, area, construction_material_id, last_inspection_date, last_maintenance_date)
+
 VALUES
     ('Research Laboratory', 1, 5, 1, 'Research facility', 'Medium', 'Good', '2028-01-01', 50, 'None', 1000, 1, '2028-01-01', '2028-01-01'),
     ('Refueling Station', 2, 3, 2, 'Fueling station', 'High', 'New', '2028-01-02', 20, 'Fuel storage', 500, 2, '2028-01-03', '2028-01-04'),
@@ -869,6 +876,7 @@ SET building_type_id = id;
 
 -- building_materials
 INSERT INTO `building_materials` (building_id, material_id)
+
 VALUES
 	(1, 5),
 	(2, 32),
