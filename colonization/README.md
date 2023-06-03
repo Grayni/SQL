@@ -44,5 +44,3 @@ The start.sql script initiates the database creation, table creation, and data p
 - `equipment_building_relations`: Establishes the relationship between equipment and buildings.
 - `life_support_systems`: Stores information about life support systems.
 - `life_support_system_building_relations`: Establishes the relationship between life support systems and buildings.
-
-For any further questions or support, please contact the project maintainers.
