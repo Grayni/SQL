@@ -78,6 +78,7 @@ BEGIN
 END$$
 DELIMITER ;
 
+
 /*
    Trigger to remove astronaut and update colony leader.
 */
@@ -152,7 +153,6 @@ SHOW TRIGGERS;
 
 
 
-
 -- ------------------- SCRIPTS -------------------
 
 /*
@@ -206,6 +206,7 @@ LEFT JOIN crew_members cm ON a.id = cm.astronaut_id
 LEFT JOIN missions m ON cm.mission_id = m.id
 LEFT JOIN mission_roles mr ON cm.mission_role_id = mr.id
 GROUP BY a.id;
+
 
 
 -- ------------------- PROCEDURES -------------------
