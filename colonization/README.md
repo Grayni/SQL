@@ -8,15 +8,14 @@ The database aims to capture information about the key entities involved in the 
 
 To set up the database, follow these steps:
 
-1. Execute the `start.sql` script to create the database and necessary tables.
-2. Execute the `tables.sql` script to create the table structures.
-3. Execute the `data.sql` script to populate the tables with sample data.
+- Execute the `start.sql`
 
 ## File Descriptions
 
 - `start.sql`: This script includes the necessary commands to initialize the database, create the tables, and populate them with sample data.
 - `tables.sql`: This script contains the table definitions for each entity in the database.
 - `data.sql`: This script includes sample data inserts for each table in the database.
+- `actions.sql` Views, procedures, triggers, scripts.
 
 ## How to Run
 To run the database initialization process, follow these steps:
